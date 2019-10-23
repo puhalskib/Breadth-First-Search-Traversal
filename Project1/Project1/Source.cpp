@@ -5,11 +5,13 @@
 using namespace std;
 
 int main() {
+
+	srand(time(NULL));
 	Tree myTree('a');
 
 	myTree.addNode('z', 0);
-	myTree.addNode('b', 1);
-	myTree.addNode('c', 1);
+	myTree.addNode('b', 0);
+	myTree.addNode('c', 0);
 	myTree.addNode('d', 1);
 
 	myTree.addNode('e', 1);

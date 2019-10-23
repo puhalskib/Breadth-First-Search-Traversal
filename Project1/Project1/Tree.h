@@ -18,8 +18,6 @@ public:
 	void addNode(char v, int depth) {
 		Node * trv = new Node();
 		trv = root;
-		//generate random seed
-		srand(time(NULL));
 		for (int i = 0; i < depth; i++) {
 			if (trv->isLeaf()) {
 				trv->newChild(new Node(v));

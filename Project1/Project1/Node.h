@@ -7,7 +7,6 @@ using namespace std;
 class Node {
 private:
 	char val;
-	Node* parent = NULL;
 	vector<Node*> children;
 public:
 	Node() {
@@ -15,13 +14,6 @@ public:
 	}
 	Node(char v) {
 		val = v;
-	}
-	Node(char v, Node* p) {
-		val = v;
-		parent = p;
-	}
-	Node* getParent() {
-		return parent;
 	}
 	vector<Node*> getChildren() {
 		return children;

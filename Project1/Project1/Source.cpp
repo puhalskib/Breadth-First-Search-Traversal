@@ -4,6 +4,10 @@
 
 using namespace std;
 
+Node breadthFirstSearch(Tree t) {
+
+}
+
 int main() {
 
 	srand(time(NULL));

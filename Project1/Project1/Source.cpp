@@ -17,7 +17,7 @@ int main() {
 	myTree.addNode('e', 1);
 	myTree.addNode('f', 1);
 
-	myTree.addNode('g', 1);
+	myTree.addNode('a', 1);
 
 	myTree.addNode('h', 1);
 	myTree.addNode('i', 2);
@@ -27,6 +27,9 @@ int main() {
 	myTree.addNode('k', 1);
 
 	myTree.printTree(myTree.getRoot(), 0);
+
+
+
 
 
 

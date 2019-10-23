@@ -36,7 +36,7 @@ public:
 	void printTree(Node* r, int tabs) {
 		//print tabs
 		for (int i = 0; i < tabs; i++) {
-			std::cout << "\t";
+			std::cout << "  ";
 		}
 		std::cout << r->getValue() << "\n";
 		for (unsigned int i = 0; i < r->getChildren().size(); i++) {

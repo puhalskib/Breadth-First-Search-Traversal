@@ -7,14 +7,16 @@ using namespace std;
 class Node {
 private:
 	char val;
-	Node* parent = NULL;
 	vector<Node*> children;
+	Node* parent;
 public:
 	Node() {
 		val = NULL;
+		parent = NULL;
 	}
 	Node(char v) {
 		val = v;
+		parent = NULL;
 	}
 	Node(char v, Node* p) {
 		val = v;

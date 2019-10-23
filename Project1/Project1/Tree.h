@@ -3,6 +3,7 @@
 #include "Node.h"
 #include <time.h>
 #include <iostream>
+#include <queue>
 
 class Tree {
 private:
@@ -16,11 +17,11 @@ public:
 	}
 	//addNode() function adds children randomly too the tree
 	void addNode(char v, int depth) {
-		Node * trv = new Node();
+		Node* trv = new Node();
 		trv = root;
 		for (int i = 0; i < depth; i++) {
 			if (trv->isLeaf()) {
-				trv->newChild(new Node(v));
+				trv->newChild(new Node(v, trv));
 				trv = nullptr;
 				delete trv;
 				return;
@@ -28,9 +29,32 @@ public:
 			//choose a random child
 			trv = trv->getChild(rand());
 		}
-		trv->newChild(new Node(v));
+		trv->newChild(new Node(v, trv));
 		trv = nullptr;
 		delete trv;
+	}
+	void addNode(char v, Node* n) {
+		Node* trv = new Node();
+		trv = n;
+		trv->newChild(new Node(v, trv));
+		trv = nullptr;
+		delete trv;
+	}
+	Node* breadthFirstSearchPtr(char c) {
+		queue<Node*> q;
+		q.push(root);
+
+		while (!q.empty()) {
+			Node* v = q.front();
+			q.pop();
+			if (v->getValue() == c) {
+				return v;
+			}
+			for (int i = 0; i < v->getChildren().size(); i++) {
+				q.push(v->getChild(i));
+			}
+		}
+		return NULL;
 	}
 	//prints the tree recursively using tabs to distinguish children
 	void printTree(Node* r, int tabs) {

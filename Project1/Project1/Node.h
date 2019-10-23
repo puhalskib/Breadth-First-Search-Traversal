@@ -10,6 +10,9 @@ private:
 	Node* parent = NULL;
 	vector<Node*> children;
 public:
+	Node() {
+		val = NULL;
+	}
 	Node(char v) {
 		val = v;
 	}
@@ -29,6 +32,9 @@ public:
 	}
 	char getValue() {
 		return val;
+	}
+	void setValue(char v) {
+		val = v;
 	}
 	void newChild(Node* nPtr) {
 		children.push_back(nPtr);

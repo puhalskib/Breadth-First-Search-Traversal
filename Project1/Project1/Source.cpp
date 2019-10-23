@@ -6,7 +6,8 @@ using namespace std;
 
 int main() {
 	Tree myTree('a');
-
+	
+	myTree.printTree(myTree.getRoot(), 0);
 
 
 

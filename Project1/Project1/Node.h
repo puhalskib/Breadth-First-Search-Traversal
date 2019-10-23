@@ -2,8 +2,9 @@
 
 #include <vector>
 
-class Node
-{
+using namespace std;
+
+class Node {
 private:
 	char val;
 	Node* parent = NULL;

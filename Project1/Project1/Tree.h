@@ -11,13 +11,16 @@ public:
 	Tree(char v) {
 		root = new Node(v);
 	}
+	Node* getRoot() {
+		return root;
+	}
 	//addNode() function adds children randomly too the tree
 	void addNode(char v, int depth) {
-		Node* trv = root;
+		Node * trv = root;
 		//generate random seed
 		srand(time(NULL));
-		for (unsigned int i = 0; i < depth; i++) {
-			if (*trv->isLeaf) {
+		for (int i = 0; i < depth; i++) {
+			if (trv->isLeaf) {
 				Node * nNode = new Node(v, trv);
 				trv->newChild(nNode);
 				return;
@@ -28,9 +31,14 @@ public:
 		Node * nNode = new Node(v, trv);
 		trv->newChild(nNode);
 	}
+	//prints the tree recursively using tabs to distinguish children
 	void printTree(Node* r, int tabs) {
-		std::cout << r->getValue;
-		for (unsigned int i = 0; i < r->getChildren().size(); i++) {
+		//print tabs
+		for (unsigned int i = 0; i < tabs; i++) {
+			std::cout << "\t";
+		}
+		std::cout << r->getValue << "\n";
+		for (unsigned int i = 0; i < r->getChildren().size() && r->isLeaf == false; i++) {
 			printTree(r->getChild(i), tabs + 1);
 		}
 	}

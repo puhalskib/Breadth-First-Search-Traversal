@@ -1,12 +1,16 @@
 #include <iostream>
 #include "Node.h"
+#include "Tree.h"
 
 using namespace std;
 
 int main() {
-	cout << "hello world\n";
-	cout << "hello second" << endl;
-	cout << "third";
+	Tree myTree('a');
 
+
+
+
+	cout << endl;
+	system("pause");
 	return 0;
 }

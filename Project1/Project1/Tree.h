@@ -2,6 +2,7 @@
 
 #include "Node.h"
 #include <time.h>
+#include <iostream>
 
 class Tree {
 private:
@@ -26,5 +27,11 @@ public:
 		}
 		Node * nNode = new Node(v, trv);
 		trv->newChild(nNode);
+	}
+	void printTree(Node* r, int tabs) {
+		std::cout << r->getValue;
+		for (unsigned int i = 0; i < r->getChildren().size(); i++) {
+			printTree(r->getChild(i), tabs + 1);
+		}
 	}
 };
